@@ -318,7 +318,7 @@ const InternalUpload: React.ForwardRefRenderFunction<unknown, UploadProps> = (pr
     supportServerRender,
     prefixCls,
     disabled: mergedDisabled,
-    beforeUpload: mergedBeforeUpload,
+    beforeUpload: props.autoUpload ? () => false : mergedBeforeUpload,
     onChange: undefined,
   } as RcUploadProps;
 
