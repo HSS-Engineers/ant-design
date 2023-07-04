@@ -101,6 +101,7 @@ export interface UploadProps<T = any> extends Pick<RcUploadProps, 'capture'> {
   showUploadList?: boolean | ShowUploadListInterface;
   multiple?: boolean;
   accept?: string;
+  autoUpload?: boolean;
   beforeUpload?: (
     file: RcFile,
     FileList: RcFile[],

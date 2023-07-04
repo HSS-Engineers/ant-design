@@ -52,6 +52,7 @@ const InternalUpload: React.ForwardRefRenderFunction<unknown, UploadProps> = (pr
     action = '',
     accept = '',
     supportServerRender = true,
+    autoUpload = false,
   } = props;
 
   // ===================== Disabled =====================
@@ -327,7 +328,7 @@ const InternalUpload: React.ForwardRefRenderFunction<unknown, UploadProps> = (pr
     supportServerRender,
     prefixCls,
     disabled: mergedDisabled,
-    beforeUpload: mergedBeforeUpload,
+    beforeUpload: autoUpload ? () => false : mergedBeforeUpload,
     onChange: undefined,
   } as RcUploadProps;
 
